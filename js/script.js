@@ -1,1 +1,1 @@
-# [Conteúdo do script.js já criado anteriormente]
+404: Not Found

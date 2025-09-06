@@ -1,1 +1,140 @@
-# [Conteúdo do index.html já criado anteriormente]
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSS13 - Controle Diário Estruturado</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WSS13 Framework</h1>
+            <p>Controle Diário Estruturado - Setembro 2025</p>
+        </div>
+
+        <div class="main-panel">
+            <div class="sidebar">
+                <div class="calendar-header">
+                    <button class="month-nav" onclick="changeMonth(-1)">‹</button>
+                    <div class="month-title" id="monthTitle">Setembro 2025</div>
+                    <button class="month-nav" onclick="changeMonth(1)">›</button>
+                </div>
+
+                <div class="calendar">
+                    <div class="day-header">Dom</div>
+                    <div class="day-header">Seg</div>
+                    <div class="day-header">Ter</div>
+                    <div class="day-header">Qua</div>
+                    <div class="day-header">Qui</div>
+                    <div class="day-header">Sex</div>
+                    <div class="day-header">Sáb</div>
+                    
+                    <div class="day inactive">1</div>
+                    <div class="day inactive">2</div>
+                    <div class="day inactive">3</div>
+                    <div class="day inactive">4</div>
+                    <div class="day inactive">5</div>
+                    <div class="day active has-tasks" onclick="selectDay(6)">6</div>
+                    <div class="day has-tasks" onclick="selectDay(7)">7</div>
+                    <div class="day" onclick="selectDay(8)">8</div>
+                    <div class="day" onclick="selectDay(9)">9</div>
+                    <div class="day" onclick="selectDay(10)">10</div>
+                    <div class="day" onclick="selectDay(11)">11</div>
+                    <div class="day" onclick="selectDay(12)">12</div>
+                    <div class="day" onclick="selectDay(13)">13</div>
+                    <div class="day" onclick="selectDay(14)">14</div>
+                    <div class="day" onclick="selectDay(15)">15</div>
+                    <div class="day" onclick="selectDay(16)">16</div>
+                    <div class="day" onclick="selectDay(17)">17</div>
+                    <div class="day" onclick="selectDay(18)">18</div>
+                    <div class="day" onclick="selectDay(19)">19</div>
+                    <div class="day" onclick="selectDay(20)">20</div>
+                    <div class="day" onclick="selectDay(21)">21</div>
+                    <div class="day" onclick="selectDay(22)">22</div>
+                    <div class="day" onclick="selectDay(23)">23</div>
+                    <div class="day" onclick="selectDay(24)">24</div>
+                    <div class="day" onclick="selectDay(25)">25</div>
+                    <div class="day" onclick="selectDay(26)">26</div>
+                    <div class="day" onclick="selectDay(27)">27</div>
+                    <div class="day" onclick="selectDay(28)">28</div>
+                    <div class="day" onclick="selectDay(29)">29</div>
+                    <div class="day" onclick="selectDay(30)">30</div>
+                </div>
+
+                <div class="week-summary">
+                    <h4>Resumo da Semana</h4>
+                    <div class="summary-stats">
+                        <div class="stat">
+                            <div class="stat-value" style="color: #28a745;">3</div>
+                            <div class="stat-label">Concluídas</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" style="color: #ffc107;">2</div>
+                            <div class="stat-label">Em Progresso</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" style="color: #dc3545;">1</div>
+                            <div class="stat-label">Pendentes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="day-header-info">
+                    <div>
+                        <div class="day-title" id="dayTitle">Sexta-feira, 6</div>
+                        <div class="day-date">Setembro 2025</div>
+                    </div>
+                    <button class="add-task-btn" onclick="openTaskModal()">+ Nova Tarefa</button>
+                </div>
+
+                <div class="tasks-container" id="tasksContainer">
+                    <!-- Tarefas serão carregadas aqui via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Nova Tarefa -->
+    <div class="modal" id="taskModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Nova Tarefa</h3>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Descrição da Tarefa</label>
+                <textarea class="form-input form-textarea" id="taskDescription" placeholder="Descreva a tarefa..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Responsável</label>
+                <input type="text" class="form-input" id="taskResponsible" placeholder="Nome do responsável">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Status</label>
+                <select class="form-select" id="taskStatus">
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em Progresso">Em Progresso</option>
+                    <option value="Feito">Concluída</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Documentação/Observações</label>
+                <textarea class="form-input form-textarea" id="taskDocumentation" placeholder="Registre o progresso ou observações..."></textarea>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeTaskModal()">Cancelar</button>
+                <button class="btn-save" onclick="saveTask()">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
